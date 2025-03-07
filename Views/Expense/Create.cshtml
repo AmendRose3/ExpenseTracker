@@ -1,0 +1,13 @@
+@model ExpenseTracker.Models.Expense
+
+<h2>Create or edit an expense</h2>
+
+<form method="post">
+    <label>Value $</label>
+    <input type="number" step="0.01" name="Value" required class="form-control" value="@Model?.Value" />
+
+    <label>Description</label>
+    <input type="text" name="Description" class="form-control" value="@Model?.Description" />
+
+    <button type="submit" class="btn btn-primary mt-2">Ok</button>
+</form>

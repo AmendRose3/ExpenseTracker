@@ -1,0 +1,31 @@
+@model List<ExpenseTracker.Models.Expense>
+
+<h2>Expenses</h2>
+<h3>Total expenses: $@ViewBag.TotalExpense</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Value</th>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var expense in Model)
+        {
+            <tr>
+                <td>@expense.Id</td>
+                <td>@expense.Value</td>
+                <td>@expense.Description</td>
+                <td>
+                    <a href="/Expense/Edit/@expense.Id">Edit</a> |
+                    <a href="/Expense/Delete/@expense.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/Expense/Create" class="btn btn-primary">Add Expense</a>
